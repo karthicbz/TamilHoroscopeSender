@@ -11,6 +11,8 @@ def parseUrl(url):
         return(data.contents[1].find_all('p')[0].text)
 
 def translate(text):
+	#sl is source language and I set it to auto
+	#tl is target language which I set it to Tamil(ta)
 	r = requests.get('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ta&dt=t&q='+text)
 	horoscopeText = r.json()
 	text = ""

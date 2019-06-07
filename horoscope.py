@@ -22,19 +22,19 @@ def translate(text):
 #def sendMail(message):
 #	s = smtplib.SMTP('smtp.gmail.com', 587)
 #	s.starttls()
-#	s.login("pkarthicbz@gmail.com", "Karthickflash123&$")
+#	s.login("your_email_id", "your_password")
 #	message = message.encode('utf-8').strip()
-#	s.sendmail("pkarthicbz@gmail.com", "pspk0302@gmail.com", message)
+#	s.sendmail("your_emailid", "receiver_email", message)
 #	s.quit()
 
 def sendMessage(message, number):
-	account_sid = "AC5b07d087ef1dfeed878bd5ac4ccabaf0"
-	auth_token = "3e7a4c6fdf5ffdc659dae0662eb774d0"
+	account_sid = "Your_sid"
+	auth_token = "your_token"
 	client = Client(account_sid, auth_token)
-	msg = client.messages.create(body=message, from_='+12564884531', to=number)
+	msg = client.messages.create(body=message, from_='your_number', to=number)
 	print("Id: "+msg.sid+"/nMessage sent to: "+number)
 
-horoList = [['12', '+918072840660'],['3', '+919790744131'],['11', '+916381358227']]
+horoList = [['12', 'person_number'],['3', 'person_number'],['11', 'person_number']]
 url = 'https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign='
 for i in range(0, len(horoList)):
 	message = translate(parseUrl(url+horoList[i][0]))
